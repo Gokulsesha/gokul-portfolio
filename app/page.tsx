@@ -1,5 +1,7 @@
 
 import About from "@/components/About";
+import Certifications from "@/components/Certifications";
+import Experience from "@/components/Experience";
 import FeaturedWork from "@/components/FeaturedWork";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -13,6 +15,8 @@ export default function Home() {
       <ProofStrip />
       <FeaturedWork />
       <About />
+      <Experience />
+      <Certifications />
     </main>
   );
 }

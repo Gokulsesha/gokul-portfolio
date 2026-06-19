@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const projects = [
   {
     title: "TRIO Vending Platform",
@@ -7,6 +10,7 @@ const projects = [
     status: "Password Protected Case Study",
     accent: "from-zinc-950 via-zinc-800 to-zinc-600",
     imageTone: "bg-gradient-to-br from-zinc-900 to-zinc-700",
+    href: "#",
   },
   {
     title: "TRIO Micromarket Kiosk",
@@ -16,6 +20,7 @@ const projects = [
     status: "Password Protected Case Study",
     accent: "from-sky-500 via-cyan-400 to-emerald-300",
     imageTone: "bg-gradient-to-br from-sky-100 to-emerald-50",
+    href: "#",
   },
   {
     title: "Cake.ly Mobile App",
@@ -25,6 +30,8 @@ const projects = [
     status: "Case Study",
     accent: "from-rose-500 via-pink-400 to-orange-300",
     imageTone: "bg-gradient-to-br from-rose-50 to-orange-50",
+    href: "/projects/cakely",
+    imageSrc: "/projects/cakely/Cake.ly_hero.png",
   },
   {
     title: "Food.ly Platform",
@@ -34,6 +41,7 @@ const projects = [
     status: "Case Study",
     accent: "from-emerald-500 via-lime-400 to-yellow-300",
     imageTone: "bg-gradient-to-br from-emerald-50 to-lime-50",
+    href: "#",
   },
 ];
 
@@ -60,30 +68,46 @@ export default function FeaturedWork() {
 
         <div className="grid gap-6 lg:grid-cols-2">
           {projects.map((project, index) => (
-            <article
+            <Link
               key={project.title}
-              className={`group relative overflow-hidden rounded-[28px] border border-zinc-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-[0_24px_60px_-40px_rgba(0,0,0,0.5)] ${
+              href={project.href}
+              className={`group block cursor-pointer ${
                 index === 0 || index === 1 ? "lg:col-span-1" : ""
               }`}
             >
-              <div className={`relative h-72 overflow-hidden ${project.imageTone}`}>
-                <div className={`absolute inset-x-8 top-8 h-44 rounded-[22px] bg-gradient-to-br ${project.accent} opacity-90`} />
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/80 to-transparent" />
-                <div className="absolute right-6 top-6 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-zinc-700 backdrop-blur">
-                  {project.status}
+              <article className="relative overflow-hidden rounded-[28px] border border-zinc-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-[0_24px_60px_-40px_rgba(0,0,0,0.5)]">
+                <div className={`relative h-72 overflow-hidden ${project.imageTone}`}>
+                  {project.imageSrc ? (
+                    <div className="absolute inset-0 bg-white">
+                      <Image
+                        src={project.imageSrc}
+                        alt={`${project.title} preview`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-contain transition duration-500 group-hover:scale-[1.02]"
+                        priority={project.title === "Cake.ly Mobile App"}
+                      />
+                    </div>
+                  ) : (
+                    <div className={`absolute inset-x-8 top-8 h-44 rounded-[22px] bg-gradient-to-br ${project.accent} opacity-90`} />
+                  )}
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/80 to-transparent" />
+                  <div className="absolute right-6 top-6 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-zinc-700 backdrop-blur">
+                    {project.status}
+                  </div>
                 </div>
-              </div>
 
-              <div className="space-y-3 p-7">
-                <p className="text-sm text-zinc-500">{project.category}</p>
-                <h3 className="text-2xl font-semibold tracking-tight text-zinc-950">
-                  {project.title}
-                </h3>
-                <p className="text-base leading-7 text-zinc-600">
-                  {project.description}
-                </p>
-              </div>
-            </article>
+                <div className="space-y-3 p-7">
+                  <p className="text-sm text-zinc-500">{project.category}</p>
+                  <h3 className="text-2xl font-semibold tracking-tight text-zinc-950">
+                    {project.title}
+                  </h3>
+                  <p className="text-base leading-7 text-zinc-600">
+                    {project.description}
+                  </p>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
