@@ -1,4 +1,5 @@
 
+import About from "@/components/About";
 import FeaturedWork from "@/components/FeaturedWork";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <ProofStrip />
       <FeaturedWork />
+      <About />
     </main>
   );
 }

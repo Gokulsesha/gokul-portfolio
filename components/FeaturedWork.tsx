@@ -1,19 +1,19 @@
 const projects = [
   {
-    title: "Enterprise IoT Retail Platform",
-    category: "Platform · Enterprise",
+    title: "TRIO Vending Platform",
+    category: "Enterprise · IoT",
     description:
-      "Designing a secure operational dashboard for retail teams managing devices, workflows, and analytics at scale.",
-    status: "Password Protected",
+      "Enterprise IoT vending solution deployed in hospitality environments, designed to simplify operations, improve visibility, and support teams at scale.",
+    status: "Password Protected Case Study",
     accent: "from-zinc-950 via-zinc-800 to-zinc-600",
     imageTone: "bg-gradient-to-br from-zinc-900 to-zinc-700",
   },
   {
-    title: "Accessibility-First Retail Experience",
-    category: "UX · Accessibility",
+    title: "TRIO Micromarket Kiosk",
+    category: "Retail · Accessibility",
     description:
-      "Reimagining in-store digital experiences for speed, trust, and inclusive interaction across touchpoints.",
-    status: "Password Protected",
+      "Accessibility-first self-service retail experience crafted for intuitive navigation, inclusive interaction, and confident purchasing.",
+    status: "Password Protected Case Study",
     accent: "from-sky-500 via-cyan-400 to-emerald-300",
     imageTone: "bg-gradient-to-br from-sky-100 to-emerald-50",
   },
@@ -21,16 +21,16 @@ const projects = [
     title: "Cake.ly Mobile App",
     category: "Mobile · Product Design",
     description:
-      "A premium ordering experience focused on discovery, personalization, and seamless checkout journeys.",
+      "Mobile ordering platform for bakery businesses, focused on discovery, personalization, and a smooth customer journey.",
     status: "Case Study",
     accent: "from-rose-500 via-pink-400 to-orange-300",
     imageTone: "bg-gradient-to-br from-rose-50 to-orange-50",
   },
   {
     title: "Food.ly Platform",
-    category: "Web · SaaS",
+    category: "Web · Social Impact",
     description:
-      "Building a scalable food operations platform with thoughtful dashboards, collaboration tools, and insights.",
+      "Food donation and distribution platform designed to improve coordination, visibility, and responsiveness across the network.",
     status: "Case Study",
     accent: "from-emerald-500 via-lime-400 to-yellow-300",
     imageTone: "bg-gradient-to-br from-emerald-50 to-lime-50",
